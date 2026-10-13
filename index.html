@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0b0f" />
+  <meta name="description" content="Create polished 9:16 Shorts and Reels visuals from any photo or plain background." />
+  <style>
+:root{
+  --bg:#0b0b0f;--panel:#141419;--panel2:#1b1b22;--line:#2c2c36;--text:#f7f7fb;--muted:#a3a3b2;
+  --accent:#8c7bff;--accent2:#bd42ff;--success:#66dfa9;
+}
+*{box-sizing:border-box}html,body{margin:0;background:radial-gradient(circle at 15% 0,#171325 0,#0b0b0f 32%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+button,input,textarea{font:inherit}.app-shell{min-height:100vh}.topbar{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;gap:14px;align-items:center;padding:16px 20px;background:rgba(11,11,15,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.brand{font-size:24px;font-weight:850;letter-spacing:-.5px}.tagline{font-size:12px;color:var(--muted);margin-top:3px}.top-actions{display:flex;gap:8px}.workspace{display:grid;grid-template-columns:minmax(320px,540px) minmax(360px,1fr);gap:22px;max-width:1440px;margin:auto;padding:22px}.editor-panel{display:flex;flex-direction:column;gap:14px}.preview-panel{position:sticky;top:94px;height:calc(100vh - 116px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}.privacy-note{font-size:12px;color:#b7d9ca;background:#10201a;border:1px solid #224638;border-radius:12px;padding:10px 12px}.section-card{background:linear-gradient(180deg,#15151b,#101015);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 18px 55px rgba(0,0,0,.16)}.section-title{font-size:15px;font-weight:800;margin-bottom:14px}.row-label,label{display:block;font-size:12px;color:#d3d3dc;margin:12px 0 7px}.optional{color:var(--muted);font-weight:400}.helper{font-size:11px;color:var(--muted);margin:8px 0 0}.upload-box{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;border:1px dashed #4a4961;border-radius:13px;background:#0e0e13;cursor:pointer;text-align:center}.upload-box input{display:none}.upload-box span{font-weight:750}.upload-box small{margin-top:4px;color:var(--muted)}textarea,input[type=text]{width:100%;background:#0d0d12;color:#fff;border:1px solid #30303b;border-radius:11px;padding:12px;outline:none}textarea:focus,input[type=text]:focus{border-color:#6d5de8;box-shadow:0 0 0 3px rgba(109,93,232,.15)}textarea{resize:vertical;min-height:70px}.segmented{display:flex;gap:6px;flex-wrap:wrap}.segmented button,.ghost-btn,.secondary-btn,.primary-btn{border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:#eaeaf2;background:#181820;cursor:pointer}.segmented button.active,.secondary-btn:hover{background:#292536;border-color:#6f62be}.segmented.compact button{padding:7px 10px;font-size:12px}.primary-btn{background:linear-gradient(135deg,#7867ff,#a83cff);border-color:#8b69ff;font-weight:800}.ghost-btn{background:transparent}.full{width:100%;margin-top:10px}.layout-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.layout-grid button{min-height:72px;text-align:left;background:#111117;border:1px solid var(--line);border-radius:12px;padding:11px;color:#fff;cursor:pointer}.layout-grid button.active{border-color:#8b69ff;background:#211d31;box-shadow:inset 0 0 0 1px #8b69ff}.layout-grid b{display:block;font-size:12px}.layout-grid span{font-size:11px;color:var(--muted)}.color-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.color-row button{width:34px;height:34px;border-radius:50%;border:2px solid #454553;background:var(--swatch);cursor:pointer}.color-row button.active{outline:3px solid #8b69ff;outline-offset:2px}.color-row .color-auto{width:auto;border-radius:999px;padding:0 13px;background:#1c1c24;color:#fff}.sliders{display:grid;grid-template-columns:1fr 1fr;gap:12px}.sliders label{margin:6px 0}.sliders input{width:100%}.toggle-row{display:flex;justify-content:space-between;align-items:center;gap:16px}.toggle-row input{width:18px;height:18px}.hidden{display:none}.phone-frame{height:min(76vh,760px);aspect-ratio:9/16;border-radius:30px;padding:10px;background:#050507;border:1px solid #2c2c35;box-shadow:0 32px 100px rgba(0,0,0,.45);overflow:hidden}.phone-frame canvas{display:block;width:100%;height:100%;border-radius:22px;background:#000}.preview-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.preview-caption{font-size:11px;color:var(--muted)}.recent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.recent-grid.empty{display:block;color:var(--muted);font-size:12px}.recent-item{background:#0e0e13;border:1px solid var(--line);padding:7px;border-radius:10px}.recent-item img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:7px}.recent-item a{display:block;color:#cabfff;font-size:11px;text-decoration:none;margin-top:6px}
+@media(max-width:900px){.topbar{padding:12px 14px}.tagline{display:none}.workspace{grid-template-columns:1fr;padding:12px}.preview-panel{position:relative;top:auto;height:auto;order:-1;padding-top:2px}.phone-frame{height:min(60vh,620px)}.editor-panel{gap:10px}.layout-grid{grid-template-columns:repeat(2,1fr)}.top-actions .ghost-btn{display:none}}
+@media(max-width:520px){.brand{font-size:20px}.topbar .primary-btn{padding:8px 10px;font-size:12px}.workspace{gap:14px}.phone-frame{height:min(56vh,560px)}.section-card{padding:14px}.layout-grid{grid-template-columns:1fr 1fr}.sliders{grid-template-columns:1fr}.preview-actions .secondary-btn{display:none}}
+
+</style>
+  <title>ShortFrame</title>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <div class="brand">ShortFrame</div>
+        <div class="tagline">Fast 9:16 creator visuals, made in your browser.</div>
+      </div>
+      <div class="top-actions">
+        <button id="newBtn" class="ghost-btn">New</button>
+        <button id="downloadBtn" class="primary-btn">Download PNG</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <section class="editor-panel">
+        <div class="privacy-note">Your image stays in this browser session. Nothing is uploaded or stored.</div>
+
+        <div class="section-card">
+          <div class="section-title">1. Image or background</div>
+          <label class="upload-box">
+            <input id="imageInput" type="file" accept="image/*" />
+            <span>Upload photo</span>
+            <small>JPG, PNG, HEIC/WebP if supported by your browser</small>
+          </label>
+
+          <div class="row-label">No image? Choose a background</div>
+          <div class="segmented" id="backgroundOptions">
+            <button data-bg="black" class="active">Black</button>
+            <button data-bg="white">White</button>
+            <button data-bg="cream">Cream</button>
+            <button data-bg="dark-gradient">Dark</button>
+            <button data-bg="neon-gradient">Neon</button>
+          </div>
+
+          <div id="imageControls" class="image-controls hidden">
+            <div class="row-label">Image fit</div>
+            <div class="segmented compact" id="fitOptions">
+              <button data-fit="auto" class="active">Auto</button>
+              <button data-fit="fill">Fill</button>
+              <button data-fit="fit">Fit</button>
+              <button data-fit="blur">Blur BG</button>
+            </div>
+            <div class="sliders">
+              <label>Horizontal <input id="imageX" type="range" min="-100" max="100" value="0" /></label>
+              <label>Vertical <input id="imageY" type="range" min="-100" max="100" value="0" /></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-card">
+          <div class="section-title">2. Write anything</div>
+          <label>Headline
+            <textarea id="headline" rows="3" placeholder="Write your main text…"></textarea>
+          </label>
+          <label>Supporting text <span class="optional">optional</span>
+            <textarea id="subtext" rows="2" placeholder="Add another line, context or quote author…"></textarea>
+          </label>
+          <label>Highlight words <span class="optional">optional</span>
+            <input id="highlightText" type="text" placeholder="e.g. PERFECT TIME" />
+          </label>
+          <label>Creator / handle <span class="optional">optional</span>
+            <input id="handle" type="text" placeholder="@yourhandle" />
+          </label>
+          <label>Footer / CTA <span class="optional">optional</span>
+            <input id="cta" type="text" value="Like & Subscribe" />
+          </label>
+          <p class="helper">Leave any field blank and it will not appear in the final image.</p>
+        </div>
+
+        <div class="section-card">
+          <div class="section-title">3. Layout</div>
+          <div class="layout-grid" id="layoutOptions">
+            <button data-layout="big-hook" class="active"><b>BIG HOOK</b><span>Large center text</span></button>
+            <button data-layout="quote"><b>QUOTE</b><span>Elegant centered type</span></button>
+            <button data-layout="top-story"><b>TOP STORY</b><span>Text upper third</span></button>
+            <button data-layout="lower-impact"><b>LOWER IMPACT</b><span>Strong lower statement</span></button>
+            <button data-layout="neon"><b>NEON</b><span>Dark + electric text</span></button>
+            <button data-layout="minimal"><b>MINIMAL</b><span>Clean editorial</span></button>
+          </div>
+          <button id="nextLayoutBtn" class="secondary-btn full">Try another layout</button>
+        </div>
+
+        <div class="section-card">
+          <div class="section-title">4. Quick look</div>
+          <div class="row-label">Photo filter</div>
+          <div class="segmented" id="filterOptions">
+            <button data-filter="original" class="active">Original</button>
+            <button data-filter="bright">Bright</button>
+            <button data-filter="warm">Warm</button>
+            <button data-filter="moody">Moody</button>
+            <button data-filter="sepia">Sepia</button>
+          </div>
+
+          <div class="row-label">Text color</div>
+          <div class="color-row" id="colorOptions">
+            <button data-color="auto" class="color-auto active">Auto</button>
+            <button data-color="#ffffff" style="--swatch:#fff" aria-label="White"></button>
+            <button data-color="#111111" style="--swatch:#111" aria-label="Black"></button>
+            <button data-color="#ff3df2" style="--swatch:#ff3df2" aria-label="Neon pink"></button>
+            <button data-color="#40d9ff" style="--swatch:#40d9ff" aria-label="Electric blue"></button>
+            <button data-color="#b7ff3c" style="--swatch:#b7ff3c" aria-label="Lime"></button>
+            <button data-color="#ffe85b" style="--swatch:#ffe85b" aria-label="Yellow"></button>
+          </div>
+
+          <div class="row-label">Readability</div>
+          <div class="segmented compact" id="readabilityOptions">
+            <button data-readability="none">None</button>
+            <button data-readability="soft" class="active">Soft</button>
+            <button data-readability="strong">Strong</button>
+          </div>
+
+          <label class="toggle-row"><span>Show safe-zone guides in preview</span><input id="safeGuides" type="checkbox" checked /></label>
+        </div>
+
+        <div class="section-card">
+          <div class="section-title">Recent</div>
+          <div id="recentGrid" class="recent-grid empty"><span>Your last 2 generated images will appear here during this session.</span></div>
+          <button id="clearRecentBtn" class="ghost-btn full">Clear recent</button>
+        </div>
+      </section>
+
+      <section class="preview-panel">
+        <div class="phone-frame">
+          <canvas id="previewCanvas" width="1080" height="1920"></canvas>
+        </div>
+        <div class="preview-actions">
+          <button id="regenBtn" class="secondary-btn">Refresh preview</button>
+          <button id="downloadBtnBottom" class="primary-btn">Download 1080×1920</button>
+        </div>
+        <div class="preview-caption">Shorts / Reels portrait output · 1080 × 1920</div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+function getCanvasFilter(name) {
+  switch (name) {
+    case 'bright': return 'brightness(1.14) contrast(1.04) saturate(1.08)';
+    case 'warm': return 'sepia(0.16) saturate(1.12) brightness(1.04)';
+    case 'moody': return 'brightness(0.82) contrast(1.18) saturate(0.82)';
+    case 'sepia': return 'sepia(0.72) contrast(1.02) brightness(0.96)';
+    default: return 'none';
+  }
+}
+
+function backgroundPaint(ctx, type, w, h) {
+  if (type === 'white') { ctx.fillStyle = '#ffffff'; ctx.fillRect(0,0,w,h); return; }
+  if (type === 'cream') { ctx.fillStyle = '#f1e7d5'; ctx.fillRect(0,0,w,h); return; }
+  if (type === 'dark-gradient') {
+    const g = ctx.createLinearGradient(0, 0, w, h);
+    g.addColorStop(0, '#07111d');
+    g.addColorStop(0.5, '#182235');
+    g.addColorStop(1, '#05070a');
+    ctx.fillStyle = g; ctx.fillRect(0,0,w,h); return;
+  }
+  if (type === 'neon-gradient') {
+    const g = ctx.createLinearGradient(0, 0, w, h);
+    g.addColorStop(0, '#0c0217');
+    g.addColorStop(0.42, '#24104a');
+    g.addColorStop(1, '#001b25');
+    ctx.fillStyle = g; ctx.fillRect(0,0,w,h); return;
+  }
+  ctx.fillStyle = '#000000'; ctx.fillRect(0,0,w,h);
+}
+
+const LAYOUTS = {
+  'big-hook': {
+    label: 'BIG HOOK',
+    textAlign: 'center',
+    headlineY: 0.47,
+    subtextY: 0.66,
+    headlineMaxWidth: 0.80,
+    headlineSize: 116,
+    subtextSize: 48,
+    headlineFont: 'Arial Black, Arial, sans-serif',
+    subtextFont: 'Arial, sans-serif',
+    uppercaseHeadline: true,
+    accentDefault: '#ffe85b',
+  },
+  quote: {
+    label: 'QUOTE',
+    textAlign: 'center',
+    headlineY: 0.44,
+    subtextY: 0.66,
+    headlineMaxWidth: 0.78,
+    headlineSize: 86,
+    subtextSize: 42,
+    headlineFont: 'Georgia, serif',
+    subtextFont: 'Georgia, serif',
+    uppercaseHeadline: false,
+    accentDefault: '#ffd7b5',
+  },
+  'top-story': {
+    label: 'TOP STORY',
+    textAlign: 'left',
+    headlineY: 0.16,
+    subtextY: 0.36,
+    headlineMaxWidth: 0.78,
+    headlineSize: 94,
+    subtextSize: 44,
+    headlineFont: 'Arial Black, Arial, sans-serif',
+    subtextFont: 'Arial, sans-serif',
+    uppercaseHeadline: false,
+    accentDefault: '#40d9ff',
+  },
+  'lower-impact': {
+    label: 'LOWER IMPACT',
+    textAlign: 'left',
+    headlineY: 0.68,
+    subtextY: 0.84,
+    headlineMaxWidth: 0.80,
+    headlineSize: 92,
+    subtextSize: 42,
+    headlineFont: 'Arial Black, Arial, sans-serif',
+    subtextFont: 'Arial, sans-serif',
+    uppercaseHeadline: false,
+    accentDefault: '#ffe85b',
+  },
+  neon: {
+    label: 'NEON',
+    textAlign: 'center',
+    headlineY: 0.46,
+    subtextY: 0.67,
+    headlineMaxWidth: 0.82,
+    headlineSize: 106,
+    subtextSize: 44,
+    headlineFont: 'Arial Black, Arial, sans-serif',
+    subtextFont: 'Arial, sans-serif',
+    uppercaseHeadline: true,
+    accentDefault: '#ff3df2',
+  },
+  minimal: {
+    label: 'MINIMAL',
+    textAlign: 'left',
+    headlineY: 0.34,
+    subtextY: 0.56,
+    headlineMaxWidth: 0.74,
+    headlineSize: 84,
+    subtextSize: 40,
+    headlineFont: 'Arial, sans-serif',
+    subtextFont: 'Arial, sans-serif',
+    uppercaseHeadline: false,
+    accentDefault: '#111111',
+  }
+};
+
+const LAYOUT_ORDER = Object.keys(LAYOUTS);
+
+
+const W = 1080;
+const H = 1920;
+
+function wrapWords(ctx, text, maxWidth) {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (!words.length) return [];
+  const lines = [];
+  let line = words[0];
+  for (let i = 1; i < words.length; i++) {
+    const test = `${line} ${words[i]}`;
+    if (ctx.measureText(test).width <= maxWidth) line = test;
+    else { lines.push(line); line = words[i]; }
+  }
+  lines.push(line);
+  return lines;
+}
+
+function fitText(ctx, text, { maxWidth, maxHeight, startSize, minSize, fontFamily, upper = false, lineHeightRatio = 1.08 }) {
+  const rendered = upper ? text.toUpperCase() : text;
+  let size = startSize;
+  let lines = [];
+  while (size >= minSize) {
+    ctx.font = `800 ${size}px ${fontFamily}`;
+    lines = wrapWords(ctx, rendered, maxWidth);
+    const height = lines.length * size * lineHeightRatio;
+    if (height <= maxHeight && lines.every(l => ctx.measureText(l).width <= maxWidth)) break;
+    size -= 4;
+  }
+  return { size, lines, text: rendered, lineHeight: size * lineHeightRatio };
+}
+
+function drawImageSmart(ctx, img, fit, offsetX, offsetY, filter) {
+  const iw = img.naturalWidth || img.width;
+  const ih = img.naturalHeight || img.height;
+  const imageRatio = iw / ih;
+  const targetRatio = W / H;
+  const ox = (offsetX / 100) * W * 0.18;
+  const oy = (offsetY / 100) * H * 0.18;
+
+  ctx.save();
+  ctx.filter = getCanvasFilter(filter);
+
+  const doFit = fit === 'fit' || (fit === 'auto' && Math.abs(imageRatio - targetRatio) > 0.85);
+  const doBlur = fit === 'blur';
+
+  if (doBlur || doFit) {
+    if (doBlur) {
+      const bgScale = Math.max(W / iw, H / ih);
+      const bw = iw * bgScale, bh = ih * bgScale;
+      ctx.save();
+      ctx.filter = `${getCanvasFilter(filter)} blur(34px) brightness(0.72)`;
+      ctx.drawImage(img, (W-bw)/2, (H-bh)/2, bw, bh);
+      ctx.restore();
+    } else {
+      ctx.fillStyle = '#111'; ctx.fillRect(0,0,W,H);
+    }
+    const scale = Math.min(W / iw, H / ih);
+    const dw = iw * scale, dh = ih * scale;
+    ctx.drawImage(img, (W-dw)/2 + ox, (H-dh)/2 + oy, dw, dh);
+  } else {
+    const scale = Math.max(W / iw, H / ih);
+    const dw = iw * scale, dh = ih * scale;
+    ctx.drawImage(img, (W-dw)/2 + ox, (H-dh)/2 + oy, dw, dh);
+  }
+  ctx.restore();
+}
+
+function estimateBackgroundTone(ctx, x, y, w, h) {
+  try {
+    const sx = Math.max(0, Math.min(W-1, Math.floor(x)));
+    const sy = Math.max(0, Math.min(H-1, Math.floor(y)));
+    const sw = Math.max(1, Math.min(W-sx, Math.floor(w)));
+    const sh = Math.max(1, Math.min(H-sy, Math.floor(h)));
+    const data = ctx.getImageData(sx, sy, sw, sh).data;
+    let sum = 0, count = 0;
+    for (let i = 0; i < data.length; i += 80) {
+      sum += (data[i] * 0.299 + data[i+1] * 0.587 + data[i+2] * 0.114);
+      count++;
+    }
+    return count ? sum / count : 80;
+  } catch { return 80; }
+}
+
+function drawReadability(ctx, layout, strength) {
+  if (strength === 'none') return;
+  const alpha = strength === 'strong' ? 0.72 : 0.42;
+  const y = layout.headlineY * H;
+  const span = 560;
+  const top = Math.max(0, y - span / 2);
+  const bottom = Math.min(H, y + span / 2);
+  const g = ctx.createLinearGradient(0, top, 0, bottom);
+  g.addColorStop(0, 'rgba(0,0,0,0)');
+  g.addColorStop(0.35, `rgba(0,0,0,${alpha})`);
+  g.addColorStop(0.65, `rgba(0,0,0,${alpha})`);
+  g.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = g;
+  ctx.fillRect(0, top, W, bottom-top);
+}
+
+function textX(align) {
+  if (align === 'left') return 110;
+  if (align === 'right') return W - 110;
+  return W / 2;
+}
+
+function canvasAlign(align) {
+  return align === 'left' ? 'left' : align === 'right' ? 'right' : 'center';
+}
+
+function drawMultiline(ctx, lines, x, startY, lineHeight, fill, font, align, highlight) {
+  ctx.textAlign = canvasAlign(align);
+  ctx.textBaseline = 'middle';
+  ctx.font = font;
+  ctx.fillStyle = fill;
+  ctx.shadowColor = 'rgba(0,0,0,0.42)';
+  ctx.shadowBlur = 18;
+  ctx.shadowOffsetY = 6;
+
+  const highlightNeedle = (highlight || '').trim().toLowerCase();
+  lines.forEach((line, i) => {
+    const y = startY + i * lineHeight;
+    if (!highlightNeedle || !line.toLowerCase().includes(highlightNeedle)) {
+      ctx.fillStyle = fill;
+      ctx.fillText(line, x, y);
+      return;
+    }
+    const idx = line.toLowerCase().indexOf(highlightNeedle);
+    const before = line.slice(0, idx);
+    const hit = line.slice(idx, idx + highlight.length);
+    const after = line.slice(idx + highlight.length);
+    const total = ctx.measureText(line).width;
+    let start = x;
+    if (align === 'center') start = x - total/2;
+    if (align === 'right') start = x - total;
+    ctx.textAlign = 'left';
+    ctx.fillStyle = fill; ctx.fillText(before, start, y);
+    const bW = ctx.measureText(before).width;
+    ctx.fillStyle = '#ffe85b'; ctx.fillText(hit, start + bW, y);
+    const hW = ctx.measureText(hit).width;
+    ctx.fillStyle = fill; ctx.fillText(after, start + bW + hW, y);
+    ctx.textAlign = canvasAlign(align);
+  });
+  ctx.shadowColor = 'transparent';
+}
+
+function drawFooter(ctx, state, fillColor) {
+  const hasHandle = !!state.handle.trim();
+  const hasCta = !!state.cta.trim();
+  if (!hasHandle && !hasCta) return;
+  const y = H - 132;
+  ctx.textBaseline = 'middle';
+  ctx.font = '600 34px Arial, sans-serif';
+  ctx.fillStyle = fillColor;
+  ctx.shadowColor = 'rgba(0,0,0,.45)'; ctx.shadowBlur = 12;
+  if (hasHandle && hasCta) {
+    ctx.textAlign = 'left'; ctx.fillText(state.handle.trim(), 92, y);
+    ctx.textAlign = 'right'; ctx.fillText(state.cta.trim(), W - 92, y);
+  } else {
+    ctx.textAlign = 'center'; ctx.fillText((state.handle || state.cta).trim(), W/2, y);
+  }
+  ctx.shadowColor = 'transparent';
+}
+
+function render(canvas, state, { forExport = false } = {}) {
+  const ctx = canvas.getContext('2d');
+  canvas.width = W; canvas.height = H;
+  ctx.clearRect(0,0,W,H);
+  const layout = LAYOUTS[state.layout] || LAYOUTS['big-hook'];
+
+  backgroundPaint(ctx, state.background, W, H);
+  if (state.image) drawImageSmart(ctx, state.image, state.fit, state.imageX, state.imageY, state.filter);
+
+  if (state.layout === 'neon' && !state.image) {
+    const glow = ctx.createRadialGradient(W*0.7,H*0.34,30,W*0.7,H*0.34,520);
+    glow.addColorStop(0,'rgba(255,61,242,.18)'); glow.addColorStop(1,'rgba(255,61,242,0)');
+    ctx.fillStyle = glow; ctx.fillRect(0,0,W,H);
+  }
+
+  drawReadability(ctx, layout, state.readability);
+
+  let defaultColor = state.textColor;
+  if (defaultColor === 'auto') {
+    const tone = estimateBackgroundTone(ctx, 0, layout.headlineY*H - 260, W, 520);
+    defaultColor = tone > 160 ? '#111111' : '#ffffff';
+  }
+  if (state.layout === 'minimal' && !state.image && state.textColor === 'auto') defaultColor = '#111111';
+  if (state.layout === 'neon' && state.textColor === 'auto') defaultColor = '#ff3df2';
+
+  if (state.headline.trim()) {
+    const fitted = fitText(ctx, state.headline, {
+      maxWidth: W * layout.headlineMaxWidth,
+      maxHeight: H * 0.34,
+      startSize: layout.headlineSize,
+      minSize: 44,
+      fontFamily: layout.headlineFont,
+      upper: layout.uppercaseHeadline,
+    });
+    const totalH = fitted.lines.length * fitted.lineHeight;
+    const startY = layout.headlineY*H - totalH/2 + fitted.lineHeight/2;
+    const font = `800 ${fitted.size}px ${layout.headlineFont}`;
+    const accent = state.highlightText.trim() || '';
+    drawMultiline(ctx, fitted.lines, textX(layout.textAlign), startY, fitted.lineHeight, defaultColor, font, layout.textAlign, accent);
+  }
+
+  if (state.subtext.trim()) {
+    ctx.font = `600 ${layout.subtextSize}px ${layout.subtextFont}`;
+    const lines = wrapWords(ctx, state.subtext.trim(), W*0.72).slice(0,5);
+    const startY = layout.subtextY*H;
+    ctx.textAlign = canvasAlign(layout.textAlign);
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = defaultColor;
+    ctx.shadowColor = 'rgba(0,0,0,.38)'; ctx.shadowBlur = 14; ctx.shadowOffsetY = 4;
+    lines.forEach((line,i)=>ctx.fillText(line, textX(layout.textAlign), startY + i*layout.subtextSize*1.22));
+    ctx.shadowColor = 'transparent';
+  }
+
+  drawFooter(ctx, state, defaultColor);
+
+  if (state.safeGuides && !forExport) {
+    ctx.save();
+    ctx.strokeStyle = 'rgba(255,255,255,.32)';
+    ctx.lineWidth = 3; ctx.setLineDash([16,12]);
+    ctx.strokeRect(72, 110, W-144, H-300);
+    ctx.setLineDash([]);
+    ctx.font = '500 26px Arial'; ctx.fillStyle = 'rgba(255,255,255,.56)'; ctx.textAlign='left';
+    ctx.fillText('safe zone', 84, 96);
+    ctx.restore();
+  }
+}
+
+
+const canvas = document.getElementById('previewCanvas');
+const state = {
+  image: null,
+  background: 'black',
+  fit: 'auto',
+  imageX: 0,
+  imageY: 0,
+  headline: '',
+  subtext: '',
+  highlightText: '',
+  handle: '',
+  cta: 'Like & Subscribe',
+  layout: 'big-hook',
+  filter: 'original',
+  textColor: 'auto',
+  readability: 'soft',
+  safeGuides: true,
+};
+
+const recent = [];
+
+function update() { render(canvas, state); }
+
+function bindText(id, key) {
+  const el = document.getElementById(id);
+  el.addEventListener('input', () => { state[key] = el.value; update(); });
+}
+['headline','subtext','highlightText','handle','cta'].forEach(id => bindText(id,id));
+
+function bindSegment(containerId, attr, key) {
+  const container = document.getElementById(containerId);
+  container.addEventListener('click', e => {
+    const btn = e.target.closest('button'); if (!btn) return;
+    [...container.querySelectorAll('button')].forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    state[key] = btn.dataset[attr];
+    update();
+  });
+}
+bindSegment('backgroundOptions','bg','background');
+bindSegment('fitOptions','fit','fit');
+bindSegment('filterOptions','filter','filter');
+bindSegment('readabilityOptions','readability','readability');
+
+const layoutOptions = document.getElementById('layoutOptions');
+layoutOptions.addEventListener('click', e=>{
+  const btn=e.target.closest('button'); if(!btn) return;
+  [...layoutOptions.querySelectorAll('button')].forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); state.layout=btn.dataset.layout; update();
+});
+
+const colorOptions = document.getElementById('colorOptions');
+colorOptions.addEventListener('click', e=>{
+  const btn=e.target.closest('button'); if(!btn) return;
+  [...colorOptions.querySelectorAll('button')].forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); state.textColor=btn.dataset.color; update();
+});
+
+const imageInput=document.getElementById('imageInput');
+imageInput.addEventListener('change', ()=>{
+  const file=imageInput.files?.[0]; if(!file) return;
+  const url=URL.createObjectURL(file); const img=new Image();
+  img.onload=()=>{state.image=img; document.getElementById('imageControls').classList.remove('hidden'); update(); URL.revokeObjectURL(url);};
+  img.src=url;
+});
+
+document.getElementById('imageX').addEventListener('input',e=>{state.imageX=Number(e.target.value);update();});
+document.getElementById('imageY').addEventListener('input',e=>{state.imageY=Number(e.target.value);update();});
+document.getElementById('safeGuides').addEventListener('change',e=>{state.safeGuides=e.target.checked;update();});
+document.getElementById('regenBtn').addEventListener('click',update);
+
+function download() {
+  render(canvas,state,{forExport:true});
+  const dataUrl=canvas.toDataURL('image/png',1);
+  const a=document.createElement('a'); a.href=dataUrl; a.download=`shortframe-${Date.now()}.png`; a.click();
+  recent.unshift(dataUrl); if(recent.length>2) recent.length=2; renderRecent();
+  render(canvas,state);
+}
+['downloadBtn','downloadBtnBottom'].forEach(id=>document.getElementById(id).addEventListener('click',download));
+
+function renderRecent(){
+  const box=document.getElementById('recentGrid'); box.innerHTML='';
+  if(!recent.length){box.classList.add('empty');box.innerHTML='<span>Your last 2 generated images will appear here during this session.</span>';return;}
+  box.classList.remove('empty');
+  recent.forEach((src,i)=>{const wrap=document.createElement('div');wrap.className='recent-item';const img=document.createElement('img');img.src=src;const a=document.createElement('a');a.href=src;a.download=`shortframe-recent-${i+1}.png`;a.textContent='Download again';wrap.append(img,a);box.append(wrap);});
+}
+document.getElementById('clearRecentBtn').addEventListener('click',()=>{recent.length=0;renderRecent();});
+
+document.getElementById('nextLayoutBtn').addEventListener('click',()=>{
+  const i=LAYOUT_ORDER.indexOf(state.layout); state.layout=LAYOUT_ORDER[(i+1)%LAYOUT_ORDER.length];
+  [...layoutOptions.querySelectorAll('button')].forEach(b=>b.classList.toggle('active',b.dataset.layout===state.layout)); update();
+});
+
+function resetCurrent(){
+  state.image=null;state.imageX=0;state.imageY=0;state.headline='';state.subtext='';state.highlightText='';state.handle='';state.cta='Like & Subscribe';state.fit='auto';state.layout='big-hook';state.filter='original';state.textColor='auto';state.readability='soft';state.background='black';state.safeGuides=true;
+  imageInput.value='';document.getElementById('imageControls').classList.add('hidden');
+  ['headline','subtext','highlightText','handle'].forEach(id=>document.getElementById(id).value='');document.getElementById('cta').value='Like & Subscribe';
+  document.getElementById('imageX').value=0;document.getElementById('imageY').value=0;document.getElementById('safeGuides').checked=true;
+  document.querySelectorAll('.segmented,.layout-grid,.color-row').forEach(group=>{
+    group.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+  });
+  document.querySelector('[data-bg="black"]').classList.add('active');
+  document.querySelector('[data-fit="auto"]').classList.add('active');
+  document.querySelector('[data-filter="original"]').classList.add('active');
+  document.querySelector('[data-readability="soft"]').classList.add('active');
+  document.querySelector('[data-layout="big-hook"]').classList.add('active');
+  document.querySelector('[data-color="auto"]').classList.add('active');
+  update();
+}
+document.getElementById('newBtn').addEventListener('click',resetCurrent);
+
+update();
+</script>
+
+</body>
+</html>
