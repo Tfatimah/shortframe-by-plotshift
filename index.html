@@ -12,6 +12,7 @@
 }
 *{box-sizing:border-box}html,body{margin:0;background:radial-gradient(circle at 15% 0,#171325 0,#0b0b0f 32%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 button,input,textarea{font:inherit}.app-shell{min-height:100vh}.topbar{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;gap:14px;align-items:center;padding:16px 20px;background:rgba(11,11,15,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}.brand{font-size:24px;font-weight:850;letter-spacing:-.5px}.tagline{font-size:12px;color:var(--muted);margin-top:3px}.top-actions{display:flex;gap:8px}.workspace{display:grid;grid-template-columns:minmax(320px,540px) minmax(360px,1fr);gap:22px;max-width:1440px;margin:auto;padding:22px}.editor-panel{display:flex;flex-direction:column;gap:14px}.preview-panel{position:sticky;top:94px;height:calc(100vh - 116px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}.privacy-note{font-size:12px;color:#b7d9ca;background:#10201a;border:1px solid #224638;border-radius:12px;padding:10px 12px}.section-card{background:linear-gradient(180deg,#15151b,#101015);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 18px 55px rgba(0,0,0,.16)}.section-title{font-size:15px;font-weight:800;margin-bottom:14px}.row-label,label{display:block;font-size:12px;color:#d3d3dc;margin:12px 0 7px}.optional{color:var(--muted);font-weight:400}.helper{font-size:11px;color:var(--muted);margin:8px 0 0}.upload-box{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;border:1px dashed #4a4961;border-radius:13px;background:#0e0e13;cursor:pointer;text-align:center}.upload-box input{display:none}.upload-box span{font-weight:750}.upload-box small{margin-top:4px;color:var(--muted)}textarea,input[type=text]{width:100%;background:#0d0d12;color:#fff;border:1px solid #30303b;border-radius:11px;padding:12px;outline:none}textarea:focus,input[type=text]:focus{border-color:#6d5de8;box-shadow:0 0 0 3px rgba(109,93,232,.15)}textarea{resize:vertical;min-height:70px}.segmented{display:flex;gap:6px;flex-wrap:wrap}.segmented button,.ghost-btn,.secondary-btn,.primary-btn{border:1px solid var(--line);border-radius:10px;padding:9px 12px;color:#eaeaf2;background:#181820;cursor:pointer}.segmented button.active,.secondary-btn:hover{background:#292536;border-color:#6f62be}.segmented.compact button{padding:7px 10px;font-size:12px}.primary-btn{background:linear-gradient(135deg,#7867ff,#a83cff);border-color:#8b69ff;font-weight:800}.ghost-btn{background:transparent}.full{width:100%;margin-top:10px}.layout-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.layout-grid button{min-height:72px;text-align:left;background:#111117;border:1px solid var(--line);border-radius:12px;padding:11px;color:#fff;cursor:pointer}.layout-grid button.active{border-color:#8b69ff;background:#211d31;box-shadow:inset 0 0 0 1px #8b69ff}.layout-grid b{display:block;font-size:12px}.layout-grid span{font-size:11px;color:var(--muted)}.color-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.color-row button{width:34px;height:34px;border-radius:50%;border:2px solid #454553;background:var(--swatch);cursor:pointer}.color-row button.active{outline:3px solid #8b69ff;outline-offset:2px}.color-row .color-auto{width:auto;border-radius:999px;padding:0 13px;background:#1c1c24;color:#fff}.sliders{display:grid;grid-template-columns:1fr 1fr;gap:12px}.sliders label{margin:6px 0}.sliders input{width:100%}.toggle-row{display:flex;justify-content:space-between;align-items:center;gap:16px}.toggle-row input{width:18px;height:18px}.hidden{display:none}.phone-frame{height:min(76vh,760px);aspect-ratio:9/16;border-radius:30px;padding:10px;background:#050507;border:1px solid #2c2c35;box-shadow:0 32px 100px rgba(0,0,0,.45);overflow:hidden}.phone-frame canvas{display:block;width:100%;height:100%;border-radius:22px;background:#000}.preview-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.preview-caption{font-size:11px;color:var(--muted)}.recent-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.recent-grid.empty{display:block;color:var(--muted);font-size:12px}.recent-item{background:#0e0e13;border:1px solid var(--line);padding:7px;border-radius:10px}.recent-item img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:7px}.recent-item a{display:block;color:#cabfff;font-size:11px;text-decoration:none;margin-top:6px}
+.save-modal{position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;padding:18px}.save-modal.open{display:flex}.save-sheet{width:min(520px,100%);max-height:92vh;overflow:auto;background:#15151b;border:1px solid #343443;border-radius:18px;padding:16px;box-shadow:0 32px 100px rgba(0,0,0,.55)}.save-sheet h3{margin:0 0 6px;font-size:18px}.save-sheet p{margin:0 0 12px;color:#bdbdca;font-size:13px;line-height:1.45}.save-preview{display:block;width:100%;max-height:68vh;object-fit:contain;background:#000;border-radius:12px;border:1px solid #2d2d37}.save-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}.save-actions button,.save-actions a{flex:1;text-align:center;text-decoration:none}.save-note{margin-top:10px!important;font-size:12px!important;color:#9d9dac!important}
 @media(max-width:900px){.topbar{padding:12px 14px}.tagline{display:none}.workspace{grid-template-columns:1fr;padding:12px}.preview-panel{position:relative;top:auto;height:auto;order:-1;padding-top:2px}.phone-frame{height:min(60vh,620px)}.editor-panel{gap:10px}.layout-grid{grid-template-columns:repeat(2,1fr)}.top-actions .ghost-btn{display:none}}
 @media(max-width:520px){.brand{font-size:20px}.topbar .primary-btn{padding:8px 10px;font-size:12px}.workspace{gap:14px}.phone-frame{height:min(56vh,560px)}.section-card{padding:14px}.layout-grid{grid-template-columns:1fr 1fr}.sliders{grid-template-columns:1fr}.preview-actions .secondary-btn{display:none}}
 
@@ -27,7 +28,7 @@ button,input,textarea{font:inherit}.app-shell{min-height:100vh}.topbar{position:
       </div>
       <div class="top-actions">
         <button id="newBtn" class="ghost-btn">New</button>
-        <button id="downloadBtn" class="primary-btn">Download PNG</button>
+        <button id="downloadBtn" class="primary-btn">Save Image</button>
       </div>
     </header>
 
@@ -145,11 +146,25 @@ button,input,textarea{font:inherit}.app-shell{min-height:100vh}.topbar{position:
         </div>
         <div class="preview-actions">
           <button id="regenBtn" class="secondary-btn">Refresh preview</button>
-          <button id="downloadBtnBottom" class="primary-btn">Download 1080×1920</button>
+          <button id="downloadBtnBottom" class="primary-btn">Save / Share Image</button>
         </div>
         <div class="preview-caption">Shorts / Reels portrait output · 1080 × 1920</div>
       </section>
     </main>
+  </div>
+
+  <div id="saveModal" class="save-modal" aria-hidden="true">
+    <div class="save-sheet">
+      <h3>Your ShortFrame is ready</h3>
+      <p id="saveHelp">On iPhone, press and hold the image, then choose <b>Save to Photos</b>. You can also use Share if your browser supports it.</p>
+      <img id="savePreviewImage" class="save-preview" alt="Generated ShortFrame image" />
+      <div class="save-actions">
+        <button id="shareAgainBtn" class="primary-btn">Share</button>
+        <a id="fallbackDownloadLink" class="secondary-btn" download="shortframe.png">Download file</a>
+        <button id="closeSaveModal" class="ghost-btn">Close</button>
+      </div>
+      <p class="save-note">Your image is generated locally in this browser and is not uploaded by ShortFrame.</p>
+    </div>
   </div>
 
   <script>
@@ -569,14 +584,88 @@ document.getElementById('imageY').addEventListener('input',e=>{state.imageY=Numb
 document.getElementById('safeGuides').addEventListener('change',e=>{state.safeGuides=e.target.checked;update();});
 document.getElementById('regenBtn').addEventListener('click',update);
 
-function download() {
-  render(canvas,state,{forExport:true});
-  const dataUrl=canvas.toDataURL('image/png',1);
-  const a=document.createElement('a'); a.href=dataUrl; a.download=`shortframe-${Date.now()}.png`; a.click();
-  recent.unshift(dataUrl); if(recent.length>2) recent.length=2; renderRecent();
-  render(canvas,state);
+let lastSavedFile = null;
+let lastSavedUrl = null;
+
+function canvasToBlob(canvas) {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error('Could not create image file.')), 'image/png', 1);
+  });
 }
-['downloadBtn','downloadBtnBottom'].forEach(id=>document.getElementById(id).addEventListener('click',download));
+
+function rememberRecent(dataUrl) {
+  recent.unshift(dataUrl);
+  if (recent.length > 2) recent.length = 2;
+  renderRecent();
+}
+
+function openSaveFallback(file, dataUrl) {
+  if (lastSavedUrl) URL.revokeObjectURL(lastSavedUrl);
+  lastSavedUrl = URL.createObjectURL(file);
+  lastSavedFile = file;
+
+  const modal = document.getElementById('saveModal');
+  document.getElementById('savePreviewImage').src = dataUrl;
+  const link = document.getElementById('fallbackDownloadLink');
+  link.href = lastSavedUrl;
+  link.download = file.name;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+}
+
+async function tryNativeShare(file) {
+  if (!navigator.share) return false;
+  try {
+    if (navigator.canShare && !navigator.canShare({ files: [file] })) return false;
+    await navigator.share({
+      files: [file],
+      title: 'ShortFrame',
+      text: 'Created with ShortFrame by PlotShift'
+    });
+    return true;
+  } catch (err) {
+    if (err && err.name === 'AbortError') return true;
+    return false;
+  }
+}
+
+async function saveImage() {
+  const buttons = ['downloadBtn','downloadBtnBottom'].map(id=>document.getElementById(id));
+  buttons.forEach(b=>{ b.disabled=true; b.dataset.oldText=b.textContent; b.textContent='Preparing…'; });
+
+  try {
+    render(canvas,state,{forExport:true});
+    const blob = await canvasToBlob(canvas);
+    const file = new File([blob], `shortframe-${Date.now()}.png`, { type: 'image/png' });
+    const dataUrl = canvas.toDataURL('image/png',1);
+    rememberRecent(dataUrl);
+
+    const shared = await tryNativeShare(file);
+    if (!shared) openSaveFallback(file, dataUrl);
+  } catch (err) {
+    alert('ShortFrame could not prepare the image on this browser. Please try again.');
+  } finally {
+    render(canvas,state);
+    buttons.forEach(b=>{ b.disabled=false; b.textContent=b.dataset.oldText || 'Save Image'; });
+  }
+}
+
+['downloadBtn','downloadBtnBottom'].forEach(id=>document.getElementById(id).addEventListener('click',saveImage));
+
+document.getElementById('shareAgainBtn').addEventListener('click', async ()=>{
+  if (lastSavedFile) {
+    const shared = await tryNativeShare(lastSavedFile);
+    if (!shared) alert('Use press-and-hold on the image and choose Save to Photos, or use Download file.');
+  }
+});
+document.getElementById('closeSaveModal').addEventListener('click', ()=>{
+  const modal=document.getElementById('saveModal');
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+});
+document.getElementById('saveModal').addEventListener('click', e=>{
+  if (e.target.id==='saveModal') document.getElementById('closeSaveModal').click();
+});
 
 function renderRecent(){
   const box=document.getElementById('recentGrid'); box.innerHTML='';
